@@ -1,7 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
-from AutomateHighland import OpenSite
+
+from Tests import OpenSite
 
 
 class ContactForm(OpenSite.OpenSiteWithHighlandTheme):
@@ -13,7 +14,7 @@ class ContactForm(OpenSite.OpenSiteWithHighlandTheme):
         driver = webdriver.Chrome()
         try:
             driver.maximize_window()
-            driver.get("https://johnsnow.myrealestateplatform.net")
+            driver.get(super().baseURL)
             driver.find_element_by_xpath("/html//p[@id='site-title']/span[@class='full']")
 
         except:
@@ -55,7 +56,7 @@ class ContactForm(OpenSite.OpenSiteWithHighlandTheme):
         driver = webdriver.Chrome()
         try:
             driver.maximize_window()
-            driver.get("https://johnsnow.myrealestateplatform.net")
+            driver.get(super().baseURL)
             driver.find_element_by_xpath("/html//p[@id='site-title']/span[@class='full']")
 
         except:
@@ -99,7 +100,7 @@ class ContactForm(OpenSite.OpenSiteWithHighlandTheme):
         driver = webdriver.Chrome()
         try:
             driver.maximize_window()
-            driver.get("https://johnsnow.myrealestateplatform.net")
+            driver.get(super().baseURL)
             driver.find_element_by_xpath("/html//p[@id='site-title']/span[@class='full']")
 
         except:
