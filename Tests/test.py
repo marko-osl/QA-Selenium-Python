@@ -1,6 +1,6 @@
-from AutomateHighland.ContactForm import ContactForm
-from AutomateHighland.ContactPage import ContactPage
-from AutomateHighland.OpenSite import OpenSiteWithHighlandTheme
+from Tests.ContactForm import ContactForm
+from Tests.ContactPage import ContactPage
+from Tests.OpenSite import OpenSiteWithHighlandTheme
 
 
 class test(OpenSiteWithHighlandTheme):

@@ -8,6 +8,7 @@ import time
 
 class OpenSiteWithHighlandTheme():
 
+    baseURL = "http://moslizlo.myrealestateplatform.xyz/"
     def open(self):
         # Setting webdriver
         driverLocation = "C:\\bin\\chromedriver.exe"
