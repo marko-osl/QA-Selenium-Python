@@ -49,3 +49,10 @@ class OpenSiteWithHighlandTheme():
     def datetime_now(self, prefix):
         symbols = str(datetime.datetime.now())
         return prefix + "-" + "".join(symbols)
+
+    def screenShotsFolder(self):
+        path = os.getcwd()
+        dl = len(path)
+        final = path[0:dl - 6]
+        final = str(final) + "\Screenshots"
+        return final
