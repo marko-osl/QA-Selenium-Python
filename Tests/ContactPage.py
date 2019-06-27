@@ -17,7 +17,7 @@ class ContactPage(OpenSite.OpenSiteWithHighlandTheme):
             driver.find_element_by_xpath("/html//p[@id='site-title']/span[@class='full']")
         except:
             print("Awaryjne wyjście z programu, nie udało się otworzyć strony")
-            driver.save_screenshot("D:\\Python\AutomateHighland\\AutomateHighland\\Screenshots\\%s" % screen_name)
+            driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
             exit();
 
         contactPage = driver.find_element(By.CSS_SELECTOR, "#menu-primary [href='\/contact']")
@@ -36,12 +36,12 @@ class ContactPage(OpenSite.OpenSiteWithHighlandTheme):
         submitButton = driver.find_element(By.CSS_SELECTOR, ".pl_widget-contact-column-right input[type='submit']")
         submitButton.click()
         if (driver.find_elements(By.XPATH, "/html//p[.='Your name is required.']")):
-            driver.save_screenshot("D:\\Python\AutomateHighland\\AutomateHighland\\Screenshots\\%s" % screen_name)
+            driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
             print("Wyjście awaryjne z programu")
             exit()
         else:
             if (driver.find_elements(By.XPATH, "/html//p[.='A valid phone is required.']")):
-                driver.save_screenshot("D:\\Python\AutomateHighland\\AutomateHighland\\Screenshots\\%s" % screen_name)
+                driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
                 print("Wyjście awaryjne z programu")
                 exit()
             else:
@@ -59,7 +59,7 @@ class ContactPage(OpenSite.OpenSiteWithHighlandTheme):
             driver.find_element_by_xpath("/html//p[@id='site-title']/span[@class='full']")
         except:
             print("Awaryjne wyjście z programu, nie udało się otworzyć strony")
-            driver.save_screenshot("D:\\Python\AutomateHighland\\AutomateHighland\\Screenshots\\%s" % screen_name)
+            driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
             exit();
         contactPage = driver.find_element(By.CSS_SELECTOR, "#menu-primary [href='\/contact']")
         contactPage.click()
@@ -82,11 +82,11 @@ class ContactPage(OpenSite.OpenSiteWithHighlandTheme):
                 print(str(self.incorrectlyTyping.__name__), " OK")
                 driver.close()
             else:
-                driver.save_screenshot("D:\\Python\AutomateHighland\\AutomateHighland\\Screenshots\\%s" % screen_name)
+                driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
                 print("Wyjście awaryjne z programu")
                 exit()
         else:
-            driver.save_screenshot("D:\\Python\AutomateHighland\\AutomateHighland\\Screenshots\\%s" % screen_name)
+            driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
             print("Wyjście awaryjne z programu")
             exit()
 
@@ -102,7 +102,7 @@ class ContactPage(OpenSite.OpenSiteWithHighlandTheme):
             driver.find_element_by_xpath("/html//p[@id='site-title']/span[@class='full']")
         except:
             print("Awaryjne wyjście z programu, nie udało się otworzyć strony")
-            driver.save_screenshot("D:\\Python\AutomateHighland\\AutomateHighland\\Screenshots\\%s" % screen_name)
+            driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
             exit();
         contactPage = driver.find_element(By.CSS_SELECTOR, "#menu-primary [href='\/contact']")
         contactPage.click()
@@ -120,10 +120,10 @@ class ContactPage(OpenSite.OpenSiteWithHighlandTheme):
                     print("Wyjście awaryjne z programu")
                     exit()
             else:
-                driver.save_screenshot("D:\\Python\AutomateHighland\\AutomateHighland\\Screenshots\\%s" % screen_name)
+                driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
                 print("Wyjście awaryjne z programu")
                 exit()
         else:
-            driver.save_screenshot("D:\\Python\AutomateHighland\\AutomateHighland\\Screenshots\\%s" % screen_name)
+            driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
             print("Wyjście awaryjne z programu")
             exit()
