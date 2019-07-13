@@ -1,7 +1,5 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
-
 from Tests import OpenSite
 
 
@@ -28,7 +26,7 @@ class ContactForm(OpenSite.OpenSiteWithHighlandTheme):
         emailAddress = driver.find_element(By.CSS_SELECTOR, ".pl_widget-contact--email #email")
         emailAddress.send_keys(super().randomEmail())
         phoneNumber = driver.find_element(By.CSS_SELECTOR, ".pl_widget-contact--phone #phone")
-        phoneNumber.send_keys(123)
+        phoneNumber.send_keys(super().randomPhone())
         question = driver.find_element(By.CSS_SELECTOR, ".pl_widget-contact--questions #question")
         question.send_keys("Marek")
         # Submit

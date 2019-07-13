@@ -8,22 +8,19 @@ import time
 
 class OpenSiteWithHighlandTheme():
 
-    baseURL = "http://moslizlo.myrealestateplatform.xyz/"
+    baseURL = "http://moslizlo.myrealestateplatform.net/"
     def open(self):
         # Setting webdriver
-        driverLocation = "C:\\bin\\chromedriver.exe"
-        os.environ["webdriver.chrome.driver"] = driverLocation
         driver = webdriver.Chrome()
         # Open site in maximalize window
         screen_name = self.urlify(self.datetime_now(str(self.open.__name__))) + '.png'
         try:
             driver.maximize_window()
-            driver.get("https://johnsnow.myrealestateplatform.net")
+            driver.get(self.baseURL)
             driver.find_element_by_xpath("/html//p[@id='site-title']/span[@class='full']")
             time.sleep(2)
         except:
             print("Awaryjne wyjście z programu, nie udało się otworzyć strony")
-            driver.save_screenshot("D:\\Python\AutomateHighland\\AutomateHighland\\Screenshots\\%s" % screen_name)
             exit();
 
     def randomEmail(self):
@@ -54,5 +51,7 @@ class OpenSiteWithHighlandTheme():
         path = os.getcwd()
         dl = len(path)
         final = path[0:dl - 6]
-        final = str(final) + "\Screenshots"
+        print(final)
+        final = str(final) + "/Screenshots/"
+        print(final)
         return final

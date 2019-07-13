@@ -1,9 +1,9 @@
 from Tests.ContactForm import ContactForm
 from Tests.ContactPage import ContactPage
-from Tests.OpenSite import OpenSiteWithHighlandTheme
+import Tests.OpenSite
 
 
-class test(OpenSiteWithHighlandTheme):
+class test(Tests.OpenSite.OpenSiteWithHighlandTheme):
     def startContactFormOnHomepage(self):
         print("*" * 10 + "Start startContactFormOnHomepage" + "*" * 10)
         contactForm = ContactForm()
