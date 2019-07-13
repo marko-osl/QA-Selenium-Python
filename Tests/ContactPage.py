@@ -17,7 +17,7 @@ class ContactPage(OpenSite.OpenSiteWithHighlandTheme):
             driver.find_element_by_xpath("/html//p[@id='site-title']/span[@class='full']")
         except:
             print("Awaryjne wyjście z programu, nie udało się otworzyć strony")
-            driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
+            driver.save_screenshot(super().screenShotsFolder() + "/%s" % screen_name)
             exit();
 
         contactPage = driver.find_element(By.CSS_SELECTOR, "#menu-primary [href='\/contact']")
