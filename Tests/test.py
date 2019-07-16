@@ -2,6 +2,7 @@ from Tests.ContactForm import ContactForm
 from Tests.ContactPage import ContactPage
 import Tests.OpenSite
 from Tests.OpenSite import OpenSiteWithHighlandTheme
+from Tests.UserSignUp import UserSignUp
 
 
 class test(Tests.OpenSite.OpenSiteWithHighlandTheme):
@@ -23,8 +24,15 @@ class test(Tests.OpenSite.OpenSiteWithHighlandTheme):
         contactForm.incorrectlyTyping(driver)
         contactForm.emptyFormOnContactPage(driver)
 
+    def startSignUp(self, driver):
+        print("*" * 10 + "Start startSignUp" + "*" * 10)
+        signUp = UserSignUp()
+        signUp.correctlySignUp(driver)
+
+
 
 Env = OpenSiteWithHighlandTheme()
 start = test()
 start.startContactFormOnHomepage(Env.open())
 start.startContactFormOnContactPage(Env.open())
+start.startSignUp(Env.open())
