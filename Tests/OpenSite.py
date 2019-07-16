@@ -11,18 +11,20 @@ class OpenSiteWithHighlandTheme():
     baseURL = "http://moslizlo.myrealestateplatform.net/"
     def open(self):
         # Setting webdriver
-        driver = webdriver.Chrome()
-        # Open site in maximalize window
         screen_name = self.urlify(self.datetime_now(str(self.open.__name__))) + '.png'
+        driver = webdriver.Chrome()
         try:
             driver.maximize_window()
             driver.get(self.baseURL)
             driver.find_element_by_xpath("/html//p[@id='site-title']/span[@class='full']")
-            time.sleep(2)
+            return driver
         except:
             print("Awaryjne wyjście z programu, nie udało się otworzyć strony")
+            driver.save_screenshot(super().screenShotsFolder() + "/%s" % screen_name)
             exit();
 
+    def closeDriver(self, driver):
+        driver.close();
     def randomEmail(self):
         email = "qaselenium"
         rand = random.randint(10000, 99999)
@@ -51,7 +53,5 @@ class OpenSiteWithHighlandTheme():
         path = os.getcwd()
         dl = len(path)
         final = path[0:dl - 6]
-        print(final)
         final = str(final) + "/Screenshots/"
-        print(final)
         return final
