@@ -8,7 +8,7 @@ import time
 
 class OpenSiteWithHighlandTheme():
 
-    baseURL = "http://moslizlo.myrealestateplatform.net/"
+    baseURL = "https://marektest.myrealestateplatform.net/"
     def open(self):
         # Setting webdriver
         screen_name = self.urlify(self.datetime_now(str(self.open.__name__))) + '.png'
@@ -16,7 +16,6 @@ class OpenSiteWithHighlandTheme():
         try:
             driver.maximize_window()
             driver.get(self.baseURL)
-            driver.find_element_by_xpath("/html//p[@id='site-title']/span[@class='full']")
             return driver
         except:
             print("Awaryjne wyjście z programu, nie udało się otworzyć strony")
