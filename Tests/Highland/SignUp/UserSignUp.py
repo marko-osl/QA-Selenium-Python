@@ -3,7 +3,8 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-from Tests import OpenSite
+from Tests.Highland import OpenSite
+
 
 class UserSignUp(OpenSite.OpenSiteWithHighlandTheme):
 
