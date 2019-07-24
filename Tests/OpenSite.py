@@ -5,6 +5,8 @@ import os
 import random
 import time
 
+from selenium.webdriver.common.by import By
+
 
 class OpenSiteWithHighlandTheme():
 
@@ -54,3 +56,10 @@ class OpenSiteWithHighlandTheme():
         final = path[0:dl - 6]
         final = str(final) + "/Screenshots/"
         return final
+
+    def isElementPresent(self, by, driver):
+        try:
+            driver.findElement(By.XPATH, by)
+            return True
+        except:
+            return False
