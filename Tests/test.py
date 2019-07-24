@@ -1,11 +1,11 @@
-from Tests.ContactForm import ContactForm
-from Tests.ContactPage import ContactPage
-import Tests.OpenSite
-from Tests.OpenSite import OpenSiteWithHighlandTheme
-from Tests.UserSignUp import UserSignUp
+from Tests.Highland.Contact_Form.ContactForm import ContactForm
+from Tests.Highland.Contact_Form.ContactPage import ContactPage
+import Tests.Highland.OpenSite
+from Tests.Highland.OpenSite import OpenSiteWithHighlandTheme
+from Tests.Highland.SignUp.UserSignUp import UserSignUp
 
 
-class test(Tests.OpenSite.OpenSiteWithHighlandTheme):
+class test(Tests.Highland.OpenSite.OpenSiteWithHighlandTheme):
 
     def openTestEnv(self):
         driver = super().open();
@@ -24,15 +24,18 @@ class test(Tests.OpenSite.OpenSiteWithHighlandTheme):
         contactForm.incorrectlyTyping(driver)
         contactForm.emptyFormOnContactPage(driver)
 
-    def startSignUp(self, driver):
+    def startSignUp(self, driver, ranEmail, ranPhone):
         print("*" * 10 + "Start startSignUp" + "*" * 10)
         signUp = UserSignUp()
-        signUp.correctlySignUp(driver)
+        signUp.correctlySignUp(driver, ranEmail, ranPhone)
+        signUp.signUpExistingAccount(ranEmail, ranPhone)
 
 
 
 Env = OpenSiteWithHighlandTheme()
+ranEmail = Env.randomEmail()
+ranPhone = Env.randomPhone()
 start = test()
-start.startContactFormOnHomepage(Env.open())
-start.startContactFormOnContactPage(Env.open())
-start.startSignUp(Env.open())
+# start.startContactFormOnHomepage(Env.open())
+# start.startContactFormOnContactPage(Env.open())
+start.startSignUp(Env.open(), ranEmail, ranPhone)
