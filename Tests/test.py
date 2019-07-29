@@ -29,6 +29,7 @@ class test(Tests.Highland.OpenSite.OpenSiteWithHighlandTheme):
         signUp = UserSignUp()
         signUp.correctlySignUp(driver, ranEmail, ranPhone)
         signUp.signUpExistingAccount(ranEmail, ranPhone)
+        signUp.signUpEmptyForm()
 
 
 

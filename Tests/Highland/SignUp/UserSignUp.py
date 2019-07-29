@@ -63,7 +63,7 @@ class UserSignUp(OpenSite.OpenSiteWithHighlandTheme):
                                        '.pl_wrapper--open .js-form-content .reg_form_last_name  input[name="last_name"]')
         lastName.send_keys("Oslizlo")
         emailAddress = driver.find_element(By.CSS_SELECTOR, '.pl_wrapper--open .js-form-content .reg_form_email  input[name="email"]')
-        emailAddress.send_keys("tewrRe@test.pl")
+        emailAddress.send_keys(ranEmail)
         password = driver.find_element(By.CSS_SELECTOR, '.pl_wrapper--open .reg_form_pass input[name="password"]')
         password.send_keys(ranPhone)
         password = driver.find_element(By.CSS_SELECTOR,
@@ -75,8 +75,41 @@ class UserSignUp(OpenSite.OpenSiteWithHighlandTheme):
         time.sleep(1)
         try:
             if (driver.find_element(By.XPATH, "//p[contains(text(),'This email is already in use.')]") is not None):
-                print("SignUp new User ---- OK")
+                print(str(self.signUpExistingAccount.__name__), " ---- OK")
                 driver.close()
+
+        except:
+            driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
+            print("Wyjście awaryjne z programu")
+            exit()
+
+    def signUpEmptyForm(self):
+        print("Trying send empty register form")
+        print("*" * 20)
+        screen_name = self.urlify(super().datetime_now(str(self.signUpEmptyForm.__name__))) + '.png'
+        driver = webdriver.Chrome()
+        try:
+            driver.maximize_window()
+            driver.get(super().baseURL)
+        except:
+            print("Awaryjne wyjście z programu, nie udało się otworzyć strony")
+            driver.save_screenshot(super().screenShotsFolder() + "/%s" % screen_name)
+            exit();
+
+        registerButton = driver.find_element(By.CSS_SELECTOR, ".pl_header-content .pl_register_lead_link")
+        registerButton.click();
+        signUpButton = driver.find_element(By.CSS_SELECTOR,
+                                           '.pl_wrapper--open .js-form-content .pl_submit-wrapper input[value="Register"]')
+        signUpButton.click()
+        time.sleep(1)
+        try:
+            if (driver.find_element(By.XPATH, "//p[contains(text(),'A valid first name is needed.')]")is not None):
+                if (driver.find_element(By.XPATH, "//p[contains(text(),'A valid last name is needed.')]")is not None):
+                    if (driver.find_element(By.XPATH, "//p[contains(text(),'A valid email is needed.')]") is not None):
+                        if (driver.find_element(By.XPATH, "//p[contains(text(),'Please enter a password.')]") is not None):
+                            if (driver.find_element(By.XPATH,"//p[contains(text(),'Please confirm your password.')]") is not None):
+                                print(str(self.signUpEmptyForm.__name__),  "---- OK")
+                                driver.close()
 
         except:
             driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
