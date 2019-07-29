@@ -63,7 +63,7 @@ class UserSignUp(OpenSite.OpenSiteWithHighlandTheme):
                                        '.pl_wrapper--open .js-form-content .reg_form_last_name  input[name="last_name"]')
         lastName.send_keys("Oslizlo")
         emailAddress = driver.find_element(By.CSS_SELECTOR, '.pl_wrapper--open .js-form-content .reg_form_email  input[name="email"]')
-        emailAddress.send_keys("tre@te.te")
+        emailAddress.send_keys("tewrRe@test.pl")
         password = driver.find_element(By.CSS_SELECTOR, '.pl_wrapper--open .reg_form_pass input[name="password"]')
         password.send_keys(ranPhone)
         password = driver.find_element(By.CSS_SELECTOR,
@@ -73,10 +73,12 @@ class UserSignUp(OpenSite.OpenSiteWithHighlandTheme):
                                            '.pl_wrapper--open .js-form-content .pl_submit-wrapper input[value="Register"]')
         signUpButton.click()
         time.sleep(1)
-        if super().isElementPresent("//p[contains(text(),'This email is already in use.')]", driver):
-            print("SignUp new User ---- OK")
-            driver.close()
-        else:
+        try:
+            if (driver.find_element(By.XPATH, "//p[contains(text(),'This email is already in use.')]") is not None):
+                print("SignUp new User ---- OK")
+                driver.close()
+
+        except:
             driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
             print("Wyjście awaryjne z programu")
             exit()
