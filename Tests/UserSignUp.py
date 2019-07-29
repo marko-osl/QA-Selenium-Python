@@ -76,6 +76,7 @@ class UserSignUp(OpenSite.OpenSiteWithHighlandTheme):
             if (driver.find_element(By.XPATH, "//p[contains(text(),'This email is already in use.')]") is not None):
                 print("SignUp new User ---- OK")
                 driver.close()
+
         except:
             driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
             print("Wyjście awaryjne z programu")
