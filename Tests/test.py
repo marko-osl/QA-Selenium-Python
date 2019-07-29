@@ -1,11 +1,11 @@
-from Tests.ContactForm import ContactForm
-from Tests.ContactPage import ContactPage
-import Tests.OpenSite
-from Tests.OpenSite import OpenSiteWithHighlandTheme
-from Tests.UserSignUp import UserSignUp
+from Tests.Highland.Contact_Form.ContactForm import ContactForm
+from Tests.Highland.Contact_Form.ContactPage import ContactPage
+import Tests.Highland.OpenSite
+from Tests.Highland.OpenSite import OpenSiteWithHighlandTheme
+from Tests.Highland.SignUp.UserSignUp import UserSignUp
 
 
-class test(Tests.OpenSite.OpenSiteWithHighlandTheme):
+class test(Tests.Highland.OpenSite.OpenSiteWithHighlandTheme):
 
     def openTestEnv(self):
         driver = super().open();

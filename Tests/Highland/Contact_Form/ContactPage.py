@@ -1,7 +1,5 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
-from Tests import OpenSite
+from Tests.Highland import OpenSite
 
 
 class ContactPage(OpenSite.OpenSiteWithHighlandTheme):
