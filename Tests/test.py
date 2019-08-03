@@ -17,6 +17,7 @@ class test(Tests.Highland.OpenSite.OpenSiteWithHighlandTheme):
         contactForm.correctlyOnHomepage(driver)
         contactForm.incorrectlyOnHomepage(driver)
         contactForm.emptyForm(driver)
+        driver.quit()
 
     def startContactFormOnContactPage(self, driver):
         print("*" * 10 + "Start startContactFormOnContactPage" + "*" * 10)
@@ -24,17 +25,22 @@ class test(Tests.Highland.OpenSite.OpenSiteWithHighlandTheme):
         contactForm.correctlyTyping(driver)
         contactForm.incorrectlyTyping(driver)
         contactForm.emptyFormOnContactPage(driver)
+        driver.quit()
 
     def startSignUpAndSignIn(self, driver, ranEmail, ranPhone):
         print("*" * 10 + "Start startSignUp" + "*" * 10)
         signUp = UserSignUp()
         signUp.correctlySignUp(driver, ranEmail, ranPhone)
-        signUp.signUpExistingAccount(ranEmail, ranPhone)
-        signUp.signUpEmptyForm()
+        signUp.logOutUser(driver)
+        signUp.signUpExistingAccount(driver, ranEmail, ranPhone)
+        signUp.signUpEmptyForm(driver)
         SignIn = UserSignIn()
         SignIn.correctlySignIn(driver, ranEmail, ranPhone)
-        SignIn.signInToNotExistingAccount(ranPhone)
-        SignIn.signInEmptyForm()
+        driver.close()
+        # driver.get(super().baseURL)
+        SignIn.signInToNotExistingAccount(self.open(), ranPhone)
+        SignIn.signInEmptyForm(self.open())
+        driver.quit()
 
 
 
@@ -43,6 +49,6 @@ Env = OpenSiteWithHighlandTheme()
 ranEmail = Env.randomEmail()
 ranPhone = Env.randomPhone()
 start = test()
-# start.startContactFormOnHomepage(Env.open())
-# start.startContactFormOnContactPage(Env.open())
+start.startContactFormOnHomepage(Env.open())
+start.startContactFormOnContactPage(Env.open())
 start.startSignUpAndSignIn(Env.open(), ranEmail, ranPhone)

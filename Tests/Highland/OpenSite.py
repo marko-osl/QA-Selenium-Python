@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
 
 class OpenSiteWithHighlandTheme():
 
-    baseURL = "https://marektest.myrealestateplatform.net/"
+    baseURL = "http://qarobothighland.myrealestateplatform.xyz/"
     def open(self):
         # Setting webdriver
         screen_name = self.urlify(self.datetime_now(str(self.open.__name__))) + '.png'
