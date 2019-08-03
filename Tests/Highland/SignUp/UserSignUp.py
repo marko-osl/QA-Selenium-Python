@@ -94,10 +94,10 @@ class UserSignUp(OpenSite.OpenSiteWithHighlandTheme):
         except:
             print("Awaryjne wyjście z programu, nie udało się otworzyć strony")
             driver.save_screenshot(super().screenShotsFolder() + "/%s" % screen_name)
-            exit();
+            exit()
 
         registerButton = driver.find_element(By.CSS_SELECTOR, ".pl_header-content .pl_register_lead_link")
-        registerButton.click();
+        registerButton.click()
         signUpButton = driver.find_element(By.CSS_SELECTOR,
                                            '.pl_wrapper--open .js-form-content .pl_submit-wrapper input[value="Register"]')
         signUpButton.click()
