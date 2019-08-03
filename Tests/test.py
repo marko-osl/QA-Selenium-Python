@@ -2,6 +2,7 @@ from Tests.Highland.Contact_Form.ContactForm import ContactForm
 from Tests.Highland.Contact_Form.ContactPage import ContactPage
 import Tests.Highland.OpenSite
 from Tests.Highland.OpenSite import OpenSiteWithHighlandTheme
+from Tests.Highland.SignIn.UserSignIn import UserSignIn
 from Tests.Highland.SignUp.UserSignUp import UserSignUp
 
 
@@ -24,12 +25,17 @@ class test(Tests.Highland.OpenSite.OpenSiteWithHighlandTheme):
         contactForm.incorrectlyTyping(driver)
         contactForm.emptyFormOnContactPage(driver)
 
-    def startSignUp(self, driver, ranEmail, ranPhone):
+    def startSignUpAndSignIn(self, driver, ranEmail, ranPhone):
         print("*" * 10 + "Start startSignUp" + "*" * 10)
         signUp = UserSignUp()
         signUp.correctlySignUp(driver, ranEmail, ranPhone)
         signUp.signUpExistingAccount(ranEmail, ranPhone)
         signUp.signUpEmptyForm()
+        SignIn = UserSignIn()
+        SignIn.correctlySignIn(driver, ranEmail, ranPhone)
+        SignIn.signInToNotExistingAccount(ranPhone)
+        SignIn.signInEmptyForm()
+
 
 
 
@@ -37,6 +43,6 @@ Env = OpenSiteWithHighlandTheme()
 ranEmail = Env.randomEmail()
 ranPhone = Env.randomPhone()
 start = test()
-start.startContactFormOnHomepage(Env.open())
-start.startContactFormOnContactPage(Env.open())
-start.startSignUp(Env.open(), ranEmail, ranPhone)
+# start.startContactFormOnHomepage(Env.open())
+# start.startContactFormOnContactPage(Env.open())
+start.startSignUpAndSignIn(Env.open(), ranEmail, ranPhone)
