@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from Tests.Highland import OpenSite
+import Tests.Highland.Variables as v
 
 
 class ContactForm(OpenSite.OpenSiteWithHighlandTheme):
@@ -12,25 +13,25 @@ class ContactForm(OpenSite.OpenSiteWithHighlandTheme):
             print("Brak drivera")
             exit()
         else:
-            firstName = driver.find_element(By.ID, "first_name")
-            firstName.send_keys("Marek")
-            lastName = driver.find_element(By.CSS_SELECTOR, ".pl_widget-contact--name #last_name")
-            lastName.send_keys("Oslizlo")
-            emailAddress = driver.find_element(By.CSS_SELECTOR, ".pl_widget-contact--email #email")
+            firstName = driver.find_element(By.ID, v.firstNameOnHomepage)
+            firstName.send_keys(v.firstName)
+            lastName = driver.find_element(By.CSS_SELECTOR, v.lastNameOnHomepage)
+            lastName.send_keys(v.lastName)
+            emailAddress = driver.find_element(By.CSS_SELECTOR, v.emailContactFormOnHomepage)
             emailAddress.send_keys(super().randomEmail())
-            phoneNumber = driver.find_element(By.CSS_SELECTOR, ".pl_widget-contact--phone #phone")
+            phoneNumber = driver.find_element(By.CSS_SELECTOR, v.phoneNumberContactFormOnHomepage)
             phoneNumber.send_keys(super().randomPhone())
-            question = driver.find_element(By.CSS_SELECTOR, ".pl_widget-contact--questions #question")
-            question.send_keys("Marek")
+            question = driver.find_element(By.CSS_SELECTOR, v.questionContactFormOnHomepage)
+            question.send_keys(v.question)
             # Submit
-            submitButton = driver.find_element(By.CSS_SELECTOR, ".pl_widget-contact-column-right input[type='submit']")
+            submitButton = driver.find_element(By.CSS_SELECTOR, v.submitButtonContactFormOnHomepage)
             submitButton.click()
-            if (driver.find_elements(By.XPATH, "/html//p[.='Your name is required.']")):
+            if (driver.find_elements(By.XPATH, v.firstNameErrorOnHomepage)):
                 driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
                 print("Wyjście awaryjne z programu")
                 exit()
             else:
-                if (driver.find_elements(By.XPATH, "/html//p[.='A valid phone is required.']")):
+                if (driver.find_elements(By.XPATH, v.phoneNumberErrorOnHomepage)):
                     driver.save_screenshot(".\\Screenshots\\%s" % screen_name)
                     print("Wyjście awaryjne z programu")
                     exit()
@@ -48,22 +49,22 @@ class ContactForm(OpenSite.OpenSiteWithHighlandTheme):
             exit()
         else:
             driver.refresh();
-            firstName = driver.find_element(By.ID, "first_name")
-            firstName.send_keys("Marek")
-            lastName = driver.find_element(By.CSS_SELECTOR, ".pl_widget-contact--name #last_name")
-            lastName.send_keys("Oslizlo")
-            emailAddress = driver.find_element(By.CSS_SELECTOR, ".pl_widget-contact--email #email")
-            emailAddress.send_keys("WrongEmail")
-            phoneNumber = driver.find_element(By.CSS_SELECTOR, ".pl_widget-contact--phone #phone")
+            firstName = driver.find_element(By.ID, v.firstNameOnHomepage)
+            firstName.send_keys(v.firstName)
+            lastName = driver.find_element(By.CSS_SELECTOR, v.lastNameOnHomepage)
+            lastName.send_keys(v.lastName)
+            emailAddress = driver.find_element(By.CSS_SELECTOR, v.emailContactFormOnHomepage)
+            emailAddress.send_keys(v.wrongEmail)
+            phoneNumber = driver.find_element(By.CSS_SELECTOR, v.phoneNumberContactFormOnHomepage)
             phoneNumber.send_keys(super().randomPhone() + 10000000000000)
-            question = driver.find_element(By.CSS_SELECTOR, ".pl_widget-contact--questions #question")
-            question.send_keys("Marek")
+            question = driver.find_element(By.CSS_SELECTOR, v.questionContactFormOnHomepage)
+            question.send_keys(v.question)
             # Submit
-            submitButton = driver.find_element(By.CSS_SELECTOR, ".pl_widget-contact-column-right input[type='submit']")
+            submitButton = driver.find_element(By.CSS_SELECTOR, v.submitButtonContactFormOnHomepage)
             submitButton.click()
             # try:
-            if (driver.find_elements(By.XPATH, "/html//p[.='A valid email is required.']")):
-                if (driver.find_elements(By.XPATH, "/html//p[.='A valid phone is required.']")):
+            if (driver.find_elements(By.XPATH, v.emailErrorOnHomepage)):
+                if (driver.find_elements(By.XPATH, v.phoneNumberErrorOnHomepage)):
                     print(str(self.incorrectlyOnHomepage.__name__), " OK")
 
 
@@ -87,11 +88,11 @@ class ContactForm(OpenSite.OpenSiteWithHighlandTheme):
         else:
             driver.refresh();
             # Submit
-            submitButton = driver.find_element(By.CSS_SELECTOR, ".pl_widget-contact-column-right input[type='submit']")
+            submitButton = driver.find_element(By.CSS_SELECTOR, v.submitButtonContactFormOnHomepage)
             submitButton.click()
-            if (driver.find_elements(By.XPATH, "/html//p[.='Your name is required.']")):
-                if (driver.find_elements(By.XPATH, "/html//p[.='A valid phone is required.']")):
-                    if (driver.find_elements(By.XPATH, "/html//textarea[@id='question']")):
+            if (driver.find_elements(By.XPATH, v.firstNameErrorOnHomepage)):
+                if (driver.find_elements(By.XPATH, v.phoneNumberErrorOnHomepage)):
+                    if (driver.find_elements(By.XPATH, v.questionErrorOnHomepage)):
                         print(str(self.emptyForm.__name__), " OK")
                         super().closeDriver(driver)
 
