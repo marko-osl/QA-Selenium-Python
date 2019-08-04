@@ -1,10 +1,7 @@
 import time
-
-from selenium import webdriver
 from selenium.webdriver.common.by import By
-
 from Tests.Highland import OpenSite
-
+import Tests.Highland.Variables as v
 
 class UserSignIn(OpenSite.OpenSiteWithHighlandTheme):
 
@@ -13,21 +10,22 @@ class UserSignIn(OpenSite.OpenSiteWithHighlandTheme):
         # ranPhone = super().randomPhone()
         print("Correctly signin as a user on the site")
         print("*" * 20)
+        screen_name = self.urlify(super().datetime_now(str(self.correctlySignIn.__name__))) + '.png'
         if (driver == 0):
             print("Brak drivera")
             exit()
         else:
             driver.get(super().baseURL)
-            loginButton = driver.find_element(By.XPATH, '//*[@id="header"]/div/div[3]/div[2]/a[1]' )
+            loginButton = driver.find_element(By.XPATH, v.loginButton)
             loginButton.click();
-            emailAddress = driver.find_element(By.CSS_SELECTOR, '.pl_wrapper--open .js-form-content .login-email  input[name="email"]')
+            emailAddress = driver.find_element(By.CSS_SELECTOR, v.loginEmailInput)
             emailAddress.send_keys(ranEmail)
-            password = driver.find_element(By.CSS_SELECTOR, '.pl_wrapper--open .login-password input[name="password"]')
+            password = driver.find_element(By.CSS_SELECTOR, v.loginPasswordInput)
             password.send_keys(ranPhone)
-            signInButton = driver.find_element(By.CSS_SELECTOR, '.pl_wrapper--open .js-form-content .pl_submit-wrapper input[value="Log In"]')
+            signInButton = driver.find_element(By.CSS_SELECTOR, v.loginSignInButton)
             signInButton.click()
             time.sleep(3)
-            if (driver.find_element(By.CSS_SELECTOR, '.pl_lead_profile_link')):
+            if (driver.find_element(By.CSS_SELECTOR, v.loginVerifyHandle)):
                 print("SignUp new User ---- OK")
                 driver.refresh()
             else:
@@ -43,19 +41,17 @@ class UserSignIn(OpenSite.OpenSiteWithHighlandTheme):
             print("Brak drivera")
             exit()
         else:
-            loginButton = driver.find_element(By.XPATH, '//*[@id="header"]/div/div[3]/div[2]/a[1]')
+            loginButton = driver.find_element(By.XPATH, v.loginButton)
             loginButton.click();
-            emailAddress = driver.find_element(By.CSS_SELECTOR,
-                                               '.pl_wrapper--open .js-form-content .login-email  input[name="email"]')
-            emailAddress.send_keys('proba@proba.pl')
-            password = driver.find_element(By.CSS_SELECTOR, '.pl_wrapper--open .login-password input[name="password"]')
+            emailAddress = driver.find_element(By.CSS_SELECTOR, v.loginEmailInput)
+            emailAddress.send_keys(v.wrongEmail)
+            password = driver.find_element(By.CSS_SELECTOR, v.loginPasswordInput)
             password.send_keys(ranPhone)
-            signInButton = driver.find_element(By.CSS_SELECTOR,
-                                               '.pl_wrapper--open .js-form-content .pl_submit-wrapper input[value="Log In"]')
+            signInButton = driver.find_element(By.CSS_SELECTOR, v.loginSignInButton)
             signInButton.click()
             time.sleep(3)
             try:
-                if (driver.find_element(By.CSS_SELECTOR, "#pl_login > .js-pl_membershipForm > #pl_login_form_inner_wrapper > div[style='display: block;']") is not None):
+                if (driver.find_element(By.CSS_SELECTOR, v.loginNotExistingAccountMessage) is not None):
                     print(str(self.signInToNotExistingAccount.__name__), " ---- OK")
                     driver.close()
             except:
@@ -71,16 +67,14 @@ class UserSignIn(OpenSite.OpenSiteWithHighlandTheme):
             print("Brak drivera")
             exit()
         else:
-            loginButton = driver.find_element(By.XPATH, '//*[@id="header"]/div/div[3]/div[2]/a[1]')
+            loginButton = driver.find_element(By.XPATH, v.loginButton)
             loginButton.click();
-            signInButton = driver.find_element(By.CSS_SELECTOR,
-                                               '.pl_wrapper--open .js-form-content .pl_submit-wrapper input[value="Log In"]')
+            signInButton = driver.find_element(By.CSS_SELECTOR, v.loginSignInButton)
             signInButton.click()
 
             try:
-                if (driver.find_element(By.CSS_SELECTOR, '.pl_wrapper--open .login-password input[name="password"]') is not None):
-                    if (driver.find_element(By.CSS_SELECTOR,
-                                               '.pl_wrapper--open .js-form-content .login-email  input[name="email"]') is not None):
+                if (driver.find_element(By.CSS_SELECTOR, v.loginPasswordEmptyMessage) is not None):
+                    if (driver.find_element(By.CSS_SELECTOR, v.loginEmailEmptyMessage) is not None):
                         print(str(self.signInEmptyForm.__name__), "---- OK")
                         driver.close()
                         
