@@ -25,6 +25,7 @@ class UserForgotPassword(OpenSite.OpenSiteWithHighlandTheme):
                     print(self.correctlySendingForgotPassword.__name__ + "----- OK")
             except:
                 print("Error, exiting...")
+                driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
                 driver.quit()
                 exit()
 
@@ -50,5 +51,6 @@ class UserForgotPassword(OpenSite.OpenSiteWithHighlandTheme):
                         print(self.incorrectlySendingForgotPasswordEmptyEmail.__name__ + "----- OK")
                 except:
                     print("Error, exiting...")
+                    driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
                     driver.quit()
                     exit()

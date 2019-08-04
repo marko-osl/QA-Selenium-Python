@@ -5,7 +5,6 @@ lastName = "Test"
 question = "How I can write the best test in Selenium & Python?"
 wrongEmail = "WrongEmail"
 
-
 # CONTACT FORM - HOMEPAGE
 firstNameOnHomepage = "first_name"
 lastNameOnHomepage = ".pl_widget-contact--name #last_name"
