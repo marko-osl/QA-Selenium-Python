@@ -39,7 +39,6 @@ class UserSignUp(OpenSite.OpenSiteWithHighlandTheme):
     def logOutUser(self, driver):
         print("Log out user")
         print("*" * 20)
-        screen_name = self.urlify(super().datetime_now(str(self.logOutUser.__name__))) + '.png'
         logOutButton = driver.find_element(By.CSS_SELECTOR, v.registerLogOutButton)
         logOutButton.click()
 

@@ -3,10 +3,6 @@ import re
 from selenium import webdriver
 import os
 import random
-import time
-
-from selenium.webdriver.common.by import By
-
 
 class OpenSiteWithHighlandTheme():
 
