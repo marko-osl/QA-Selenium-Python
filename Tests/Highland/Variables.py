@@ -20,3 +20,30 @@ questionErrorOnHomepage = "/html//textarea[@id='question']"
 
 # CONTACT FORM - CONTACT PAGE
 contactPageLinkMenu = "#menu-primary [href='\/contact']"
+
+# SIGNUP FORM
+registerButton = ".pl_header-content .pl_register_lead_link"
+registerFirstNameInput = '.pl_wrapper--open .js-form-content .reg_form_first_name  input[name="first_name"]'
+registerLastNameInput = '.pl_wrapper--open .js-form-content .reg_form_last_name  input[name="last_name"]'
+registerEmailInput = '.pl_wrapper--open .js-form-content .reg_form_email  input[name="email"]'
+registerPasswordInput = '.pl_wrapper--open .reg_form_pass input[name="password"]'
+registerConfirmPasswordInput = '.pl_wrapper--open .reg_form_confirm_pass input[name="confirm"]'
+registerSignUpButton = '.pl_wrapper--open .js-form-content .pl_submit-wrapper input[value="Register"]'
+registerVerifyHandle = ".pl_nav-wrapper .pl_lead_profile_link"
+registerLogOutButton = ".pl_nav-wrapper a.pl_logout_link"
+registerEmailExistingMessage = "//p[contains(text(),'This email is already in use.')]"
+registerFirstNameWrongMessage = "//p[contains(text(),'A valid first name is needed.')]"
+registerLastNameWrongMessage = "//p[contains(text(),'A valid last name is needed.')]"
+registerEmailWrongMessage = "//p[contains(text(),'A valid email is needed.')]"
+registerPasswordWrongMessage = "//p[contains(text(),'Please enter a password.')]"
+registerConfirmPasswordWrongMessage = "//p[contains(text(),'Please confirm your password.')]"
+
+# SIGNIN FORM
+loginButton = '//*[@id="header"]/div/div[3]/div[2]/a[1]'
+loginEmailInput = '.pl_wrapper--open .js-form-content .login-email  input[name="email"]'
+loginPasswordInput = '.pl_wrapper--open .login-password input[name="password"]'
+loginSignInButton = '.pl_wrapper--open .js-form-content .pl_submit-wrapper input[value="Log In"]'
+loginVerifyHandle = '.pl_lead_profile_link'
+loginNotExistingAccountMessage = "#pl_login > .js-pl_membershipForm > #pl_login_form_inner_wrapper > div[style='display: block;']"
+loginPasswordEmptyMessage = '.pl_wrapper--open .login-password input[name="password"]'
+loginEmailEmptyMessage = '.pl_wrapper--open .js-form-content .login-email  input[name="email"]'

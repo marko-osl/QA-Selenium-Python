@@ -1,9 +1,7 @@
 import time
-
-from selenium import webdriver
 from selenium.webdriver.common.by import By
-
 from Tests.Highland import OpenSite
+import Tests.Highland.Variables as v
 
 
 class UserSignUp(OpenSite.OpenSiteWithHighlandTheme):
@@ -18,22 +16,22 @@ class UserSignUp(OpenSite.OpenSiteWithHighlandTheme):
             print("Brak drivera")
             exit()
         else:
-            registerButton = driver.find_element(By.CSS_SELECTOR, ".pl_header-content .pl_register_lead_link" )
+            registerButton = driver.find_element(By.CSS_SELECTOR, v.registerButton )
             registerButton.click();
-            firstName = driver.find_element(By.CSS_SELECTOR, '.pl_wrapper--open .js-form-content .reg_form_first_name  input[name="first_name"]')
-            firstName.send_keys("Marek")
-            lastName = driver.find_element(By.CSS_SELECTOR, '.pl_wrapper--open .js-form-content .reg_form_last_name  input[name="last_name"]')
-            lastName.send_keys("Oslizlo")
-            emailAddress = driver.find_element(By.CSS_SELECTOR, '.pl_wrapper--open .js-form-content .reg_form_email  input[name="email"]')
+            firstName = driver.find_element(By.CSS_SELECTOR, v.registerFirstNameInput)
+            firstName.send_keys(v.firstName)
+            lastName = driver.find_element(By.CSS_SELECTOR, v.registerLastNameInput)
+            lastName.send_keys(v.lastName)
+            emailAddress = driver.find_element(By.CSS_SELECTOR, v.registerEmailInput)
             emailAddress.send_keys(ranEmail)
-            password = driver.find_element(By.CSS_SELECTOR, '.pl_wrapper--open .reg_form_pass input[name="password"]')
+            password = driver.find_element(By.CSS_SELECTOR, v.registerPasswordInput)
             password.send_keys(ranPhone)
-            password = driver.find_element(By.CSS_SELECTOR, '.pl_wrapper--open .reg_form_confirm_pass input[name="confirm"]')
-            password.send_keys(ranPhone)
-            signUpButton = driver.find_element(By.CSS_SELECTOR, '.pl_wrapper--open .js-form-content .pl_submit-wrapper input[value="Register"]')
+            confirmPassword = driver.find_element(By.CSS_SELECTOR, v.registerConfirmPasswordInput)
+            confirmPassword.send_keys(ranPhone)
+            signUpButton = driver.find_element(By.CSS_SELECTOR, v.registerSignUpButton)
             signUpButton.click()
             time.sleep(3)
-            if (driver.find_element(By.CSS_SELECTOR, '.pl_lead_profile_link')):
+            if (driver.find_element(By.CSS_SELECTOR, ".pl_nav-wrapper .pl_lead_profile_link")):
                 print("SignUp new User ---- OK")
             else:
                 driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
@@ -44,7 +42,7 @@ class UserSignUp(OpenSite.OpenSiteWithHighlandTheme):
         print("Log out user")
         print("*" * 20)
         screen_name = self.urlify(super().datetime_now(str(self.logOutUser.__name__))) + '.png'
-        logOutButton = driver.find_element(By.CSS_SELECTOR, ".pl_nav-wrapper a.pl_logout_link")
+        logOutButton = driver.find_element(By.CSS_SELECTOR, v.registerLogOutButton)
         logOutButton.click()
 
 
@@ -56,27 +54,23 @@ class UserSignUp(OpenSite.OpenSiteWithHighlandTheme):
             print("Brak drivera")
             exit()
         else:
-            registerButton = driver.find_element(By.CSS_SELECTOR, ".pl_header-content .pl_register_lead_link")
+            registerButton = driver.find_element(By.CSS_SELECTOR, v.registerButton)
             registerButton.click();
-            firstName = driver.find_element(By.CSS_SELECTOR,
-                                            '.pl_wrapper--open .js-form-content .reg_form_first_name  input[name="first_name"]')
-            firstName.send_keys("Marek")
-            lastName = driver.find_element(By.CSS_SELECTOR,
-                                           '.pl_wrapper--open .js-form-content .reg_form_last_name  input[name="last_name"]')
-            lastName.send_keys("Oslizlo")
-            emailAddress = driver.find_element(By.CSS_SELECTOR, '.pl_wrapper--open .js-form-content .reg_form_email  input[name="email"]')
+            firstName = driver.find_element(By.CSS_SELECTOR, v.registerFirstNameInput)
+            firstName.send_keys(v.firstName)
+            lastName = driver.find_element(By.CSS_SELECTOR, v.registerLastNameInput)
+            lastName.send_keys(v.lastName)
+            emailAddress = driver.find_element(By.CSS_SELECTOR, v.registerEmailInput)
             emailAddress.send_keys(ranEmail)
-            password = driver.find_element(By.CSS_SELECTOR, '.pl_wrapper--open .reg_form_pass input[name="password"]')
+            password = driver.find_element(By.CSS_SELECTOR, v.registerPasswordInput)
             password.send_keys(ranPhone)
-            password = driver.find_element(By.CSS_SELECTOR,
-                                           '.pl_wrapper--open .reg_form_confirm_pass input[name="confirm"]')
-            password.send_keys(ranPhone)
-            signUpButton = driver.find_element(By.CSS_SELECTOR,
-                                               '.pl_wrapper--open .js-form-content .pl_submit-wrapper input[value="Register"]')
+            confirmPassword = driver.find_element(By.CSS_SELECTOR, v.registerConfirmPasswordInput)
+            confirmPassword.send_keys(ranPhone)
+            signUpButton = driver.find_element(By.CSS_SELECTOR, v.registerSignUpButton)
             signUpButton.click()
             time.sleep(3)
             try:
-                if (driver.find_element(By.XPATH, "//p[contains(text(),'This email is already in use.')]") is not None):
+                if (driver.find_element(By.XPATH, v.registerEmailExistingMessage) is not None):
                     print(str(self.signUpExistingAccount.__name__), " ---- OK")
             except:
                 driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
@@ -91,25 +85,20 @@ class UserSignUp(OpenSite.OpenSiteWithHighlandTheme):
             print("Brak drivera")
             exit()
         else:
-            firstName = driver.find_element(By.CSS_SELECTOR,
-                                            '.pl_wrapper--open .js-form-content .reg_form_first_name  input[name="first_name"]').clear()
-            lastName = driver.find_element(By.CSS_SELECTOR,
-                                           '.pl_wrapper--open .js-form-content .reg_form_last_name  input[name="last_name"]').clear()
-            emailAddress = driver.find_element(By.CSS_SELECTOR,
-                                               '.pl_wrapper--open .js-form-content .reg_form_email  input[name="email"]').clear()
-            password = driver.find_element(By.CSS_SELECTOR, '.pl_wrapper--open .reg_form_pass input[name="password"]').clear()
-            confirmPassword = driver.find_element(By.CSS_SELECTOR,
-                                       '.pl_wrapper--open .reg_form_confirm_pass input[name="confirm"]').clear()
-            signUpButton = driver.find_element(By.CSS_SELECTOR,
-                                               '.pl_wrapper--open .js-form-content .pl_submit-wrapper input[value="Register"]')
+            driver.find_element(By.CSS_SELECTOR, v.registerFirstNameInput).clear()
+            driver.find_element(By.CSS_SELECTOR, v.registerLastNameInput).clear()
+            driver.find_element(By.CSS_SELECTOR, v.registerEmailInput).clear()
+            driver.find_element(By.CSS_SELECTOR, v.registerPasswordInput).clear()
+            driver.find_element(By.CSS_SELECTOR, v.registerConfirmPasswordInput).clear()
+            signUpButton = driver.find_element(By.CSS_SELECTOR,v.registerSignUpButton)
             signUpButton.click()
             time.sleep(1)
             try:
-                if (driver.find_element(By.XPATH, "//p[contains(text(),'A valid first name is needed.')]")is not None):
-                    if (driver.find_element(By.XPATH, "//p[contains(text(),'A valid last name is needed.')]")is not None):
-                        if (driver.find_element(By.XPATH, "//p[contains(text(),'A valid email is needed.')]") is not None):
-                            if (driver.find_element(By.XPATH, "//p[contains(text(),'Please enter a password.')]") is not None):
-                                if (driver.find_element(By.XPATH,"//p[contains(text(),'Please confirm your password.')]") is not None):
+                if (driver.find_element(By.XPATH, v.registerFirstNameWrongMessage)is not None):
+                    if (driver.find_element(By.XPATH, v.registerLastNameWrongMessage)is not None):
+                        if (driver.find_element(By.XPATH, v.registerEmailWrongMessage) is not None):
+                            if (driver.find_element(By.XPATH, v.registerPasswordWrongMessage) is not None):
+                                if (driver.find_element(By.XPATH,v.registerConfirmPasswordWrongMessage) is not None):
                                     print(str(self.signUpEmptyForm.__name__),  "---- OK")
                                     
 
