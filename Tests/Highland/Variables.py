@@ -47,3 +47,12 @@ loginVerifyHandle = '.pl_lead_profile_link'
 loginNotExistingAccountMessage = "#pl_login > .js-pl_membershipForm > #pl_login_form_inner_wrapper > div[style='display: block;']"
 loginPasswordEmptyMessage = '.pl_wrapper--open .login-password input[name="password"]'
 loginEmailEmptyMessage = '.pl_wrapper--open .js-form-content .login-email  input[name="email"]'
+
+# FORGOT PASSWORD
+forgotPasswordLoginLink = '//*[@id="header"]/div/div[3]/div[2]/a[1]'
+forgotPasswordButton = ".pl_popup-wrapper #pl_login #pl_login_form_inner_wrapper .js-form-content .login-submit .pl_password_link "
+forgotPasswordEmailInput = '.pl_wrapper--open .js-form-content .login-email  input[name="email"]'
+forgotPasswordResetPasswordButton = '.pl_wrapper--open .js-form-content .pl_submit-wrapper input[name="submit"]'
+forgotPasswordSuccessHandle = '.pl_popup-wrapper #pl_loginReset .js-pl_membershipForm .success'
+forgotPasswordEmptyEmailMessage = "/html//p[.='A valid email is needed']"
+forgotPasswordExitButton = ".pl_btn--close"

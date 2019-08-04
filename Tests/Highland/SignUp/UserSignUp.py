@@ -7,8 +7,6 @@ import Tests.Highland.Variables as v
 class UserSignUp(OpenSite.OpenSiteWithHighlandTheme):
 
     def correctlySignUp(self, driver, ranEmail, ranPhone):
-        # ranEmail = super().randomEmail()
-        # ranPhone = super().randomPhone()
         print("Correctly signup new user to the site")
         print("*" * 20)
         screen_name = self.urlify(super().datetime_now(str(self.correctlySignUp.__name__))) + '.png'
@@ -17,7 +15,7 @@ class UserSignUp(OpenSite.OpenSiteWithHighlandTheme):
             exit()
         else:
             registerButton = driver.find_element(By.CSS_SELECTOR, v.registerButton )
-            registerButton.click();
+            registerButton.click()
             firstName = driver.find_element(By.CSS_SELECTOR, v.registerFirstNameInput)
             firstName.send_keys(v.firstName)
             lastName = driver.find_element(By.CSS_SELECTOR, v.registerLastNameInput)

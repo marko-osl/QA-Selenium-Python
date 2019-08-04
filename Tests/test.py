@@ -4,6 +4,7 @@ import Tests.Highland.OpenSite
 from Tests.Highland.OpenSite import OpenSiteWithHighlandTheme
 from Tests.Highland.SignIn.UserSignIn import UserSignIn
 from Tests.Highland.SignUp.UserSignUp import UserSignUp
+from Tests.Highland.ForgotPassword.UserForgotPassword import UserForgotPassword
 
 
 class test(Tests.Highland.OpenSite.OpenSiteWithHighlandTheme):
@@ -41,7 +42,12 @@ class test(Tests.Highland.OpenSite.OpenSiteWithHighlandTheme):
         SignIn.signInToNotExistingAccount(self.open(), ranPhone)
         SignIn.signInEmptyForm(self.open())
         driver.quit()
-
+    def startForgotPassword(self, driver,ranEmail):
+        print("*" * 10 + "Start Forgot password" + "*" * 10)
+        forgot = UserForgotPassword()
+        forgot.correctlySendingForgotPassword(driver,ranEmail)
+        forgot.incorrectlySendingForgotPasswordEmptyEmail(driver)
+        driver.quit()
 
 
 
@@ -52,3 +58,4 @@ start = test()
 start.startContactFormOnHomepage(Env.open())
 start.startContactFormOnContactPage(Env.open())
 start.startSignUpAndSignIn(Env.open(), ranEmail, ranPhone)
+start.startForgotPassword(Env.open(), ranEmail)

@@ -6,8 +6,7 @@ import Tests.Highland.Variables as v
 class UserSignIn(OpenSite.OpenSiteWithHighlandTheme):
 
     def correctlySignIn(self, driver, ranEmail, ranPhone):
-        # ranEmail = super().randomEmail()
-        # ranPhone = super().randomPhone()
+
         print("Correctly signin as a user on the site")
         print("*" * 20)
         screen_name = self.urlify(super().datetime_now(str(self.correctlySignIn.__name__))) + '.png'
