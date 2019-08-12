@@ -21,13 +21,15 @@ class DeleteAllLeads(OpenSite.OpenSiteWithHighlandTheme):
                     passwordField.send_keys(adminPassword)
                     loginButton = driver.find_element(By.CSS_SELECTOR, v.loginButton)
                     loginButton.click()
-                    time.sleep(5)
-                    try:
+                    time.sleep(7)
+                    if (domain != "xyz"):
                         if (driver.find_element_by_css_selector("[ng-reflect-title='Main Street Realty'] h4") is not None):
                             print(str(self.loginToTheAdminPanelOldIncApp.__name__) + "---- OK")
-                    except:
-                        driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
-                        print("Wyjście awaryjne z programu")
-                        exit()
+                        else:
+                            driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
+                            print("Wyjście awaryjne z programu")
+                            exit()
+                    else:
+                        driver.close()
 
 

@@ -4,8 +4,6 @@
     <list default="true" id="116ef186-628c-42dc-b351-2e660f1e1819" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/AdminPanel/CRM/DeleteAllLeads.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/AdminPanel/CRM/DeleteAllLeads.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/AdminPanel/Variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/AdminPanel/Variables.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Highland/OpenSite.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Highland/OpenSite.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565630008902</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added checking did user was correct login to admin panel">
+      <created>1565640763964</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1565640763964</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,6 +189,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixing path to the screenshots folder" />
     <MESSAGE value="Added test login to Admin panel on every environment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added test login to Admin panel on every environment" />
+    <MESSAGE value="Added checking did user was correct login to admin panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added checking did user was correct login to admin panel" />
   </component>
 </project>
