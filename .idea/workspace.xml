@@ -2,9 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="116ef186-628c-42dc-b351-2e660f1e1819" name="Default Changelist" comment="Fixing path to the screenshots folder">
+      <change afterPath="$PROJECT_DIR$/Tests/AdminPanel/CRM/DeleteAllLeads.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/AdminPanel/Variables.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/testAdmin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/QA-Selenium-Python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/QA-Selenium-Python.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/correctlyOnHomepage20190711-203829680527.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/incorrectlyOnHomepage20190716-172127801202.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/incorrectlyOnHomepage20190716-172855649234.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/logOutUser20190803-193414755939.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/logOutUser20190803-193601597056.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signInEmptyForm20190803-141411258407.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signInEmptyForm20190803-141625630917.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signInEmptyForm20190803-141841548659.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signInEmptyForm20190803-142109776220.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signInEmptyForm20190803-142320672931.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signInEmptyForm20190803-142452992334.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signInEmptyForm20190803-142845935333.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signInEmptyForm20190803-143008353929.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signUpEmptyForm20190729-210030287737.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signUpExistingAccount20190717-160010280003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signUpExistingAccount20190723-214608443734.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signUpExistingAccount20190723-214735903801.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signUpExistingAccount20190723-215017129615.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signUpExistingAccount20190724-203415583343.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signUpExistingAccount20190724-205037101984.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signUpExistingAccount20190729-200943267478.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signUpExistingAccount20190729-201101560392.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signUpExistingAccount20190729-201137499215.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signUpExistingAccount20190729-201214296625.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signUpExistingAccount20190729-201522700357.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signUpExistingAccount20190729-201623027213.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signUpExistingAccount20190729-202023364944.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signUpExistingAccount20190729-202124946448.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signUpExistingAccount20190729-202438395544.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signUpExistingAccount20190803-184054065057.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Screenshots/signUpExistingAccount20190803-184508582995.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/Highland/OpenSite.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Highland/OpenSite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Highland/SignUp/UserSignUp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Highland/SignUp/UserSignUp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/testSites.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/activate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/activate.csh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/activate.fish" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/python" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/python3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/python3.6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib64" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/pyvenv.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pyvenv.cfg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,23 +84,22 @@
       </map>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1920" />
-    <option name="y" value="25" />
-    <option name="width" value="1920" />
-    <option name="height" value="1055" />
-  </component>
   <component name="ProjectId" id="1OTEAxQfsolpLY4oWWrtb9ZWK1I" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Tests/test.py" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Python" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Tests/testSites.py" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Python\QA-Selenium-Python\Tests" />
       <recent name="$PROJECT_DIR$/Tests/Highland" />
       <recent name="$PROJECT_DIR$/Tests/Highland/SignUp" />
       <recent name="$PROJECT_DIR$/Tests/Highland/Contact_Form" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Python\QA-Selenium-Python" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -71,7 +114,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.testAdmin">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="QA-Selenium-Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -93,19 +136,19 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="testAdmin" type="PythonConfigurationType" factoryName="Python">
       <module name="QA-Selenium-Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/venv/bin/python" />
+      <option name="SDK_HOME" value="C:\Users\marko\AppData\Local\Programs\Python\Python37-32\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tests/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tests/testAdmin.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -114,6 +157,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="testSites" type="PythonConfigurationType" factoryName="Python">
+      <module name="QA-Selenium-Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\marko\AppData\Local\Programs\Python\Python37-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tests/testSites.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.testAdmin" />
+      <item itemvalue="Python.testSites" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -135,15 +203,6 @@
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
