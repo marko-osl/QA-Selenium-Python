@@ -3,6 +3,7 @@ import re
 from selenium import webdriver
 import os
 import random
+from selenium.common.exceptions import NoSuchElementException
 
 class OpenSiteWithHighlandTheme():
 
@@ -63,3 +64,10 @@ class OpenSiteWithHighlandTheme():
         final = path[0:dl - 6]
         final = str(final) + "/Screenshots/"
         return final
+
+    def check_exists_by_xpath(xpath):
+        try:
+            webdriver.find_element_by_xpath(xpath)
+        except NoSuchElementException:
+            return False
+        return True

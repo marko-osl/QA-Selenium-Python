@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from Tests.Highland import OpenSite
 from Tests.AdminPanel import Variables as v
+import time
 
 class DeleteAllLeads(OpenSite.OpenSiteWithHighlandTheme):
         def loginToTheAdminPanelOldIncApp(self, driver, adminEmail, adminPassword, domain):
@@ -20,3 +21,13 @@ class DeleteAllLeads(OpenSite.OpenSiteWithHighlandTheme):
                     passwordField.send_keys(adminPassword)
                     loginButton = driver.find_element(By.CSS_SELECTOR, v.loginButton)
                     loginButton.click()
+                    time.sleep(5)
+                    try:
+                        if (driver.find_element_by_css_selector("[ng-reflect-title='Main Street Realty'] h4") is not None):
+                            print(str(self.loginToTheAdminPanelOldIncApp.__name__) + "---- OK")
+                    except:
+                        driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
+                        print("Wyjście awaryjne z programu")
+                        exit()
+
+
