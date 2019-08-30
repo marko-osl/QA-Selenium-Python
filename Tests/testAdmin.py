@@ -11,19 +11,23 @@ class test(Tests.Highland.OpenSite.OpenSiteWithHighlandTheme):
     def startDeleteAllLeadsInternal(self, driver):
         print("*" * 10 + "Start DeleteAllLeads from internal test" + "*" * 10)
         deleteLeads = DeleteAllLeads()
-        deleteLeads.loginToTheAdminPanelOldIncApp(driver, "qa.pl.robot+net@gmail.com", "placester123", v.domainInternal)
+        deleteLeads.loginToTheAdminPanelOldIncApp(driver, "moslizglo@placester.com", "wpkraken", v.domainInternal)
+        deleteLeads.enterToTheCRM(driver)
+        deleteLeads.deleteLeads(driver)
         driver.quit()
 
     def startDeleteAllLeadsStaging(self, driver):
         print("*" * 10 + "Start DeleteAllLeads test from staging" + "*" * 10)
         deleteLeads = DeleteAllLeads()
         deleteLeads.loginToTheAdminPanelOldIncApp(driver, "qa.pl.robot+com@gmail.com", "placester123", v.domainStaging)
+        deleteLeads.enterToTheCRM(driver)
         driver.quit()
 
     def startDeleteAllLeadsProduction(self, driver):
         print("*" * 10 + "Start DeleteAllLeads test from production" + "*" * 10)
         deleteLeads = DeleteAllLeads()
         deleteLeads.loginToTheAdminPanelOldIncApp(driver, "qa.pl.robot+com@gmail.com", "placester123", v.domainProduction)
+        deleteLeads.enterToTheCRM(driver)
         driver.quit()
 
 
