@@ -11,7 +11,7 @@ class test(Tests.Highland.OpenSite.OpenSiteWithHighlandTheme):
     def startDeleteAllLeadsInternal(self, driver):
         print("*" * 10 + "Start DeleteAllLeads from internal" + "*" * 10)
         deleteLeads = DeleteAllLeads()
-        deleteLeads.loginToTheAdminPanelOldIncApp(driver, "moslizglo@placester.com", "wpkraken", v.domainInternal)
+        deleteLeads.loginToTheAdminPanelOldIncApp(driver, "qa.pl.robot+com@gmail.com", "placester123", v.domainInternal)
         deleteLeads.enterToTheCRM(driver)
         deleteLeads.deleteLeads(driver)
         driver.quit()
