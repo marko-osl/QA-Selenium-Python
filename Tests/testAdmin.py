@@ -9,7 +9,7 @@ class test(Tests.Highland.OpenSite.OpenSiteWithHighlandTheme):
         driver = super().openAdmin();
         return driver
     def startDeleteAllLeadsInternal(self, driver):
-        print("*" * 10 + "Start DeleteAllLeads from internal test" + "*" * 10)
+        print("*" * 10 + "Start DeleteAllLeads from internal" + "*" * 10)
         deleteLeads = DeleteAllLeads()
         deleteLeads.loginToTheAdminPanelOldIncApp(driver, "moslizglo@placester.com", "wpkraken", v.domainInternal)
         deleteLeads.enterToTheCRM(driver)

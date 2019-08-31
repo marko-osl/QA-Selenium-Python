@@ -59,7 +59,7 @@ class DeleteAllLeads(OpenSite.OpenSiteWithHighlandTheme):
             else:
                 try:
                     try:
-                        while driver.find_element(By.CSS_SELECTOR, ".entity-count") != 0:
+                        while driver.find_element(By.CSS_SELECTOR, v.selectAllLeadsOnSite) is not None:
                             time.sleep(1)
                             selectAllLeads = driver.find_element_by_css_selector(v.selectAllLeadsOnSite)
                             selectAllLeads.click()
