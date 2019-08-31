@@ -4,6 +4,7 @@
     <list default="true" id="116ef186-628c-42dc-b351-2e660f1e1819" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/AdminPanel/CRM/DeleteAllLeads.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/AdminPanel/CRM/DeleteAllLeads.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/testAdmin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/testAdmin.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -170,7 +171,28 @@
       <option name="project" value="LOCAL" />
       <updated>1565640763964</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Modified condition">
+      <created>1565641709131</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1565641709131</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add loop to delete all leads but condition doesn't work correctly yet">
+      <created>1567194867520</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1567194867520</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixing the condition on the loop.">
+      <created>1567283757592</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1567283757592</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,6 +212,9 @@
     <MESSAGE value="Fixing path to the screenshots folder" />
     <MESSAGE value="Added test login to Admin panel on every environment" />
     <MESSAGE value="Added checking did user was correct login to admin panel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added checking did user was correct login to admin panel" />
+    <MESSAGE value="Modified condition" />
+    <MESSAGE value="Add loop to delete all leads but condition doesn't work correctly yet" />
+    <MESSAGE value="Fixing the condition on the loop." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing the condition on the loop." />
   </component>
 </project>
