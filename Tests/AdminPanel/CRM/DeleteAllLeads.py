@@ -43,7 +43,7 @@ class DeleteAllLeads(OpenSite.OpenSiteWithHighlandTheme):
                         time.sleep(7)
                         try:
                             if (driver.find_element_by_css_selector(".nav--bar li:nth-of-type(2) span") is not None):
-                                print(str(self.loginToTheAdminPanelOldIncApp.__name__) + "---- OK")
+                                print(str(self.enterToTheCRM.__name__) + "---- OK")
                         except:
                             driver.save_screenshot(super().screenShotsFolder() + "\\%s" % screen_name)
                             print("Emergency exit from the program")

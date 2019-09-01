@@ -3,11 +3,12 @@ firstName = "Marek"
 lastName = "Test"
 question = "How I can write the best test in Selenium & Python?"
 wrongEmail = "WrongEmail"
+wrongPhone = "123abc1231"
 domainInternal = "net"
 domainStaging = "xyz"
 domainProduction = "com"
 
-#LOGIN TO THE ADMIN PANEL
+#LOGIN TO THE ADMIN PANEL AND DELETE ALL LEADS
 emailField = ".login input[name='email']"
 passwordField = ".login input[name='password']"
 loginButton = ".login .btn"
@@ -16,3 +17,17 @@ crmButton = "body > app-root > pl-header-wrapper > apc-header > div > div.header
 selectAllLeadsOnSite = "thead input"
 deleteButton = "#delete-action"
 deleteConfirm = "//div[@class='k-widget k-window k-dialog crm-entity-grid-modals']//div[3]//button[2]"
+
+#ADDING NEW LEAD
+newLeadButton = ".crm-entity-actions-container .new-crm-entity-btn-container .btn-brand"
+firstNameField = "#tab-content #lead-first_name"
+lastNameField = "#tab-content #lead-last_name"
+emailNewField = "#tab-content #lead-primary_email"
+additionalEmailField = ".email_container [type]"
+workEmailCheck = "#tab-content > form > div:nth-child(3) > div > div.col-md-9 > div.email_container > div > div > div > div > div.col-md-5 > select > option:nth-child(2)"
+phoneNumberField = "#tab-content #lead-primary_phone"
+additionalPhoneNumberField = ".phone_container .dynamic-controls .col-md-6 > .form-control"
+workPhoneNumberCheck = "#tab-content > form > div:nth-child(3) > div > div.col-md-9 > div.phone_container > div > div > div > div > div.col-md-5 > select > option:nth-child(3)"
+saveButton = ".btn-primary"
+editLeadInFrame = ".t-blue-gray-d1 .button-text"
+alertWrongEmail = ".alert-danger"
