@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from Tests.Highland import OpenSite
-import Tests.Highland.Variables as v
+from Variables.Sites import Highland as v
+
 
 class ContactPage(OpenSite.OpenSiteWithHighlandTheme):
 

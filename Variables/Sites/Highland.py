@@ -12,6 +12,7 @@ emailContactFormOnHomepage = ".pl_widget-contact--email #email"
 phoneNumberContactFormOnHomepage = ".pl_widget-contact--phone #phone"
 questionContactFormOnHomepage = ".pl_widget-contact--questions #question"
 submitButtonContactFormOnHomepage = ".pl_widget-contact-column-right input[type='submit']"
+successSendingContactFormOnHomepage = '//*[@id="contact"]/div/div[2]/section/div[1]/h4'
 firstNameErrorOnHomepage = "/html//p[.='Your name is required.']"
 phoneNumberErrorOnHomepage = "/html//p[.='A valid phone is required.']"
 emailErrorOnHomepage = "/html//p[.='A valid email is required.']"
