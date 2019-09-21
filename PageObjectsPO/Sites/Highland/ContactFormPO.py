@@ -7,8 +7,8 @@ import Variables.Sites.Highland as v
 class ContactFormPO(unittest.TestCase):
     def __init__(self): None
 
-    def correctlyFillTheFormOnHomepage(self, driver, firstName, lastName, email, phone, question):
-        screen_name = fun.urlify(fun.datetime_now(str(self.correctlyFillTheFormOnHomepage.__name__))) + '.png'
+    def correctlyFillTheContactForm(self, driver, firstName, lastName, email, phone, question):
+        screen_name = fun.urlify(fun.datetime_now(str(self.correctlyFillTheContactForm.__name__))) + '.png'
         if (driver == 0):
             print("Emergency quit the test - No driver found")
             exit()
@@ -33,8 +33,8 @@ class ContactFormPO(unittest.TestCase):
             except:
                 return True
 
-    def incorrectlyFillTheFormOnHomepage(self, driver, firstName, lastName, email, phone, question):
-        screen_name = fun.urlify(fun.datetime_now(str(self.incorrectlyFillTheFormOnHomepage.__name__))) + '.png'
+    def incorrectlyFillTheContactForm(self, driver, firstName, lastName, email, phone, question):
+        screen_name = fun.urlify(fun.datetime_now(str(self.incorrectlyFillTheContactForm.__name__))) + '.png'
         if (driver == 0):
             print("Emergency quit the test - No driver found")
             exit()
@@ -59,8 +59,8 @@ class ContactFormPO(unittest.TestCase):
                 driver.save_screenshot(fun.screenShotsFolder() + "\\%s" % screen_name)
                 return False
 
-    def emptyFormOnHomepage(self, driver):
-        screen_name = fun.urlify(fun.datetime_now(str(self.emptyFormOnHomepage.__name__))) + '.png'
+    def emptyContactForm(self, driver):
+        screen_name = fun.urlify(fun.datetime_now(str(self.emptyContactForm.__name__))) + '.png'
         if (driver == 0):
             print("Emergency quit the test - No driver found")
             exit()
@@ -77,3 +77,7 @@ class ContactFormPO(unittest.TestCase):
             except:
                 driver.save_screenshot(fun.screenShotsFolder() + "\\%s" % screen_name)
                 return False
+
+    def goToContactPage(self, driver):
+        contactPageButton = driver.find_element_by_css_selector(v.contactPageLinkMenu)
+        contactPageButton.click()
