@@ -1,3 +1,4 @@
+import time
 import unittest
 from selenium import webdriver
 import helping_functions.funtions as fun
@@ -20,8 +21,23 @@ class ContactForm(unittest.TestCase):
     def test_user_can_correctly_send_contact_form_from_homepage(self):
         driver = self.driver
         runner = self.runner
-        test = runner.correctlyFillTheForm(driver, v.firstName, v.lastName, fun.randomEmail(),fun.randomPhone(), v.question)
+        test = runner.correctlyFillTheFormOnHomepage(driver, v.firstName, v.lastName, fun.randomEmail(),fun.randomPhone(), v.question)
         self.assertTrue(test)
+
+    def test_user_cannot_correctly_send_contact_form_with_wrong_email_and_phone(self):
+        driver = self.driver
+        runner = self.runner
+        driver.refresh()
+        test = runner.incorrectlyFillTheFormOnHomepage(driver, v.firstName, v.lastName, v.wrongEmail, fun.randomPhone() + 100000000, v.question)
+        self.assertTrue(test)
+
+    def test_user_cannot_correctly_send_empty_contact_form(self):
+        driver = self.driver
+        runner = self.runner
+        driver.refresh()
+        test = runner.emptyFormOnHomepage(driver)
+        self.assertTrue(test)
+
 
     # def incorrectlyOnHomepage(self,driver):
     #     print("Incorrectly Contact Form On Homepage, wrong email and phone")

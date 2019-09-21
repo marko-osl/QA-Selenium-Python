@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from Tests.Highland import OpenSite
+import OpenSite
 from Tests.AdminPanel import Variables as v
 import time
 

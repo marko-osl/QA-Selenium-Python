@@ -1,6 +1,6 @@
 import time
 from selenium.webdriver.common.by import By
-from Tests.Highland import OpenSite
+import OpenSite
 from Variables.Sites import Highland as v
 
 

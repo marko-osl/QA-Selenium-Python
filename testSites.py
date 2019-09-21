@@ -1,13 +1,13 @@
 from Tests.Highland.Contact_Form.ContactForm import ContactForm
-from Tests.Highland.Contact_Form.ContactPage import ContactPage
-import Tests.Highland.OpenSite
-from Tests.Highland.OpenSite import OpenSiteWithHighlandTheme
-from Tests.Highland.SignIn.UserSignIn import UserSignIn
-from Tests.Highland.SignUp.UserSignUp import UserSignUp
-from Tests.Highland.ForgotPassword.UserForgotPassword import UserForgotPassword
+from ContactPage import ContactPage
+import OpenSite
+from OpenSite import OpenSiteWithHighlandTheme
+from SignIn.UserSignIn import UserSignIn
+from SignUp.UserSignUp import UserSignUp
+from ForgotPassword.UserForgotPassword import UserForgotPassword
 
 
-class test(Tests.Highland.OpenSite.OpenSiteWithHighlandTheme):
+class test(OpenSite.OpenSiteWithHighlandTheme):
 
     def openTestEnv(self):
         driver = super().openSites();

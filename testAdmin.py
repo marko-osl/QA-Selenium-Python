@@ -1,9 +1,9 @@
 from Tests.AdminPanel.CRM.DeleteAllLeads import DeleteAllLeads
-from Tests.Highland.OpenSite import OpenSiteWithHighlandTheme
+from OpenSite import OpenSiteWithHighlandTheme
 from Tests.AdminPanel import Variables as v
-import Tests.Highland.OpenSite
+import OpenSite
 
-class test(Tests.Highland.OpenSite.OpenSiteWithHighlandTheme):
+class test(OpenSite.OpenSiteWithHighlandTheme):
 
     def openTestEnv(self):
         driver = super().openAdmin();
