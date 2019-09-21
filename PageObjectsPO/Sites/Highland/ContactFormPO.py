@@ -1,5 +1,3 @@
-from selenium import webdriver
-import time
 import unittest
 import helping_functions.funtions as fun
 import Variables.Sites.Highland as v
